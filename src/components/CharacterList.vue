@@ -1,7 +1,13 @@
 <script>
 import CharacterCard from "./CharacterCard.vue";
+import { store } from "../store";
 
 export default {
+  data() {
+    return {
+      store,
+    };
+  },
   components: {
     CharacterCard,
   },
@@ -9,7 +15,13 @@ export default {
 </script>
 
 <template>
-  <CharacterCard />
+  <div class="cards-container">
+    <CharacterCard
+      v-for="character in store.characterList"
+      :key="character.id"
+      :characterData="character"
+    />
+  </div>
 </template>
 
 <style lang="scss" scoped></style>
