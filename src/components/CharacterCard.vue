@@ -7,9 +7,17 @@ export default {
 </script>
 
 <template>
-  <h2>{{ characterData.name }}</h2>
-  <div class="title"></div>
-  <div class="archetype"></div>
+  <div class="card">
+    <img :src="characterData.card_images[0].image_url_small" alt="" />
+    <h2>{{ characterData.name }}</h2>
+    <div class="archetype">{{ characterData.archetype }}</div>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card {
+  text-align: center;
+  background-color: #d48f38;
+  padding: 1rem;
+}
+</style>

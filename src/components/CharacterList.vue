@@ -1,6 +1,6 @@
 <script>
 import CharacterCard from "./CharacterCard.vue";
-import { store } from "../store";
+import { store } from "../store.js";
 
 export default {
   data() {
@@ -19,9 +19,18 @@ export default {
     <CharacterCard
       v-for="character in store.characterList"
       :key="character.id"
+      class="card-character"
       :characterData="character"
     />
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.card-character {
+  flex: 0 0 20%;
+}
+</style>
