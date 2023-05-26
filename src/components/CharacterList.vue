@@ -15,6 +15,11 @@ export default {
 </script>
 
 <template>
+  <select v-model="store.arrCard">
+    <option v-for="selector in store.arrCard" :key="selector.id">
+      {{ selector.archetype_name }}
+    </option>
+  </select>
   <div class="cards-container">
     <CharacterCard
       v-for="character in store.characterList"
